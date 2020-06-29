@@ -1,0 +1,1013 @@
+/*--------------------------------------------------------------
+ # Buttons.scss - BoldGrid Button Library.
+ --------------------------------------------------------------*/
+/*! @license
+ *
+ * Buttons
+ * Copyright 2012-2014 Alex Wolfe and Rob Levin
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Compass (optional)
+ *
+ * We recommend the use of autoprefixer instead of Compass
+ * when using buttons. However, buttons does support Compass.
+ * simply change $ubtn-use-compass to true and uncomment the
+ * @import 'compass' code below to use Compass.
+ */
+/*
+ * Required Files
+ *
+ * These files include the variables and options
+ * and base css styles that are required to generate buttons.
+ */
+/*
+ * $ubtn prefix (reserved)
+ *
+ * This prefix stands for Unicorn Button - ubtn
+ * We provide a prefix to the Sass Variables to
+ * prevent namespace collisions that could occur if
+ * you import buttons as part of your Sass build process.
+ * We kindly ask you not to use the prefix $ubtn in your project
+ * in order to avoid possilbe name conflicts. Thanks!
+ */
+/*
+ * Button Namespace (ex .button or .btn)
+ *
+ */
+/*
+ * Button Defaults
+ *
+ * Some default settings that are used throughout the button library.
+ * Changes to these settings will be picked up by all of the other modules.
+ * The colors used here are the default colors for the base button (gray).
+ * The font size and height are used to set the base size for the buttons.
+ * The size values will be used to calculate the larger and smaller button sizes.
+ */
+/*
+ * Button Colors
+ *
+ * $ubtn-colors is used to generate the different button colors.
+ * Edit or add colors to the list below and recompile.
+ * Each block contains the (name, background, color)
+ * The class is generated using the name: (ex .button-primary)
+ */
+/*
+ * Button Shapes
+ *
+ * $ubtn-shapes is used to generate the different button shapes.
+ * Edit or add shapes to the list below and recompile.
+ * Each block contains the (name, border-radius).
+ * The class is generated using the name: (ex .button-square).
+ */
+/*
+ * Button Sizes
+ *
+ * $ubtn-sizes is used to generate the different button sizes.
+ * Edit or add colors to the list below and recompile.
+ * Each block contains the (name, size multiplier).
+ * The class is generated using the name: (ex .button-giant).
+ */
+/*
+ * Color Mixin
+ *
+ * Iterates through the list of colors and creates
+ *
+ */
+/*
+ * No Animation
+ *
+ * Sets animation property to none
+ */
+/*
+ * Clearfix
+ *
+ * Clears floats inside the container
+ */
+/*
+ * Base Button Style
+ *
+ * The default values for the .button class
+ */
+.btn {
+  color: #333;
+  background-color: #f6c600;
+  border-color: #f6c600;
+  font-weight: inherit;
+  font-size: 1em;
+  font-family: inherit;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 40px;
+  margin: 0;
+  display: inline-block;
+  appearance: none;
+  cursor: pointer;
+  border: none;
+  box-sizing: border-box;
+  transition-property: all;
+  transition-duration: 0.3s;
+  /*
+   * Disabled State
+   *
+   * The disabled state uses the class .disabled, is-disabled,
+   * and the form attribute disabled="disabled".
+   * The use of !important is only added because this is a state
+   * that must be applied to all buttons when in a disabled state.
+   */ }
+  .btn:visited {
+    color: #333; }
+  .btn:hover, .btn:focus {
+    background-color: #ffce06;
+    text-decoration: none;
+    outline: none; }
+  .btn:active, .btn.active, .btn.is-active {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    background-color: #eabf0c;
+    border-color: #b99500;
+    color: #c39d00;
+    transition-duration: 0s;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); }
+  .btn.disabled, .btn.is-disabled, .btn:disabled {
+    top: 0 !important;
+    background: #eee !important;
+    border: 1px solid #ddd !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 1) !important;
+    color: #ccc !important;
+    cursor: default !important;
+    appearance: none !important; }
+    .btn.disabled else, .btn.is-disabled else, .btn:disabled else {
+      box-shadow: none !important;
+      opacity: 0.8 !important; }
+/*
+ * Base Button Tyography
+ *
+ */
+.btn-uppercase {
+  text-transform: uppercase; }
+
+.btn-lowercase {
+  text-transform: lowercase; }
+
+.btn-capitalize {
+  text-transform: capitalize; }
+
+.btn-small-caps {
+  font-variant: small-caps; }
+
+.btn-icon-txt-large {
+  font-size: 36px !important; }
+/*
+ * Base padding
+ *
+ */
+.btn-width-small {
+  padding: 0 10px !important; }
+/*
+ * Base Colors
+ *
+ * Create colors for buttons
+ * (.button-primary, .button-secondary, etc.)
+ */
+.btn-color-1, .btn-color-1-flat {
+  background-color: #f6c600;
+  border-color: #f6c600;
+  color: #333; }
+  .btn-color-1:visited, .btn-color-1-flat:visited {
+    color: #333; }
+  .btn-color-1:hover, .btn-color-1-flat:hover, .btn-color-1:focus, .btn-color-1-flat:focus {
+    background-color: #ffd52a;
+    border-color: #ffd52a;
+    color: #333; }
+  .btn-color-1:active, .btn-color-1-flat:active, .btn-color-1.active, .btn-color-1-flat.active, .btn-color-1.is-active, .btn-color-1-flat.is-active {
+    background-color: #eabf0c;
+    border-color: #eabf0c;
+    color: #c39d00; }
+
+.btn-color-2, .btn-color-2-flat {
+  background-color: #ffe477;
+  border-color: #ffe477;
+  color: #333; }
+  .btn-color-2:visited, .btn-color-2-flat:visited {
+    color: #333; }
+  .btn-color-2:hover, .btn-color-2-flat:hover, .btn-color-2:focus, .btn-color-2-flat:focus {
+    background-color: #fea;
+    border-color: #fea;
+    color: #333; }
+  .btn-color-2:active, .btn-color-2-flat:active, .btn-color-2.active, .btn-color-2-flat.active, .btn-color-2.is-active, .btn-color-2-flat.is-active {
+    background-color: #f8e07e;
+    border-color: #f8e07e;
+    color: #ffda44; }
+
+.btn-color-3, .btn-color-3-flat {
+  background-color: #bc9700;
+  border-color: #bc9700;
+  color: #fff; }
+  .btn-color-3:visited, .btn-color-3-flat:visited {
+    color: #fff; }
+  .btn-color-3:hover, .btn-color-3-flat:hover, .btn-color-3:focus, .btn-color-3-flat:focus {
+    background-color: #efc000;
+    border-color: #efc000;
+    color: #fff; }
+  .btn-color-3:active, .btn-color-3-flat:active, .btn-color-3.active, .btn-color-3-flat.active, .btn-color-3.is-active, .btn-color-3-flat.is-active {
+    background-color: #b39109;
+    border-color: #b39109;
+    color: #896e00; }
+
+.btn-color-4, .btn-color-4-flat {
+  background-color: #66581f;
+  border-color: #66581f;
+  color: #fff; }
+  .btn-color-4:visited, .btn-color-4-flat:visited {
+    color: #fff; }
+  .btn-color-4:hover, .btn-color-4-flat:hover, .btn-color-4:focus, .btn-color-4-flat:focus {
+    background-color: #8d7a2b;
+    border-color: #8d7a2b;
+    color: #fff; }
+  .btn-color-4:active, .btn-color-4-flat:active, .btn-color-4.active, .btn-color-4-flat.active, .btn-color-4.is-active, .btn-color-4-flat.is-active {
+    background-color: #5f5426;
+    border-color: #5f5426;
+    color: #3f3613; }
+
+.btn-color-5, .btn-color-5-flat {
+  background-color: #f7efcb;
+  border-color: #f7efcb;
+  color: #333; }
+  .btn-color-5:visited, .btn-color-5-flat:visited {
+    color: #333; }
+  .btn-color-5:hover, .btn-color-5-flat:hover, .btn-color-5:focus, .btn-color-5-flat:focus {
+    background-color: #fefdf7;
+    border-color: #fefdf7;
+    color: #333; }
+  .btn-color-5:active, .btn-color-5-flat:active, .btn-color-5.active, .btn-color-5-flat.active, .btn-color-5.is-active, .btn-color-5-flat.is-active {
+    background-color: #f4edce;
+    border-color: #f4edce;
+    color: #f0e19f; }
+/*
+ * Base Layout Styles
+ *
+ * Very Miminal Layout Styles
+ */
+.btn-block, .btn-stacked {
+  display: block; }
+/*
+ * Button Types (optional)
+ *
+ * All of the files below represent the various button
+ * types (including shapes & sizes). None of these files
+ * are required. Simple remove the uneeded type below and
+ * the button type will be excluded from the final build
+ */
+/*
+ * Button Shapes
+ *
+ * This file creates the various button shapes
+ * (ex. Circle, Rounded, Pill)
+ */
+.btn-square {
+  border-radius: 0; }
+
+.btn-box {
+  border-radius: 10px; }
+
+.btn-rounded {
+  border-radius: 4px; }
+
+.btn-pill {
+  border-radius: 200px; }
+
+.btn-circle {
+  border-radius: 100%; }
+/*
+ * Size Adjustment for equal height & widht buttons
+ *
+ * Remove padding and set a fixed width.
+ */
+.btn-circle, .btn-box, .btn-square {
+  padding: 0 !important;
+  width: 40px; }
+  .btn-circle.btn-giant, .btn-box.btn-giant, .btn-square.btn-giant {
+    width: 70px; }
+  .btn-circle.btn-jumbo, .btn-box.btn-jumbo, .btn-square.btn-jumbo {
+    width: 60px; }
+  .btn-circle.btn-large, .btn-box.btn-large, .btn-square.btn-large {
+    width: 50px; }
+  .btn-circle.btn-normal, .btn-box.btn-normal, .btn-square.btn-normal {
+    width: 40px; }
+  .btn-circle.btn-small, .btn-box.btn-small, .btn-square.btn-small {
+    width: 30px; }
+  .btn-circle.btn-tiny, .btn-box.btn-tiny, .btn-square.btn-tiny {
+    width: 24px; }
+/*
+ * Border Buttons
+ *
+ * These buttons have no fill they only have a
+ * border to define their hit target.
+ */
+.btn-border, .btn-border-thin, .btn-border-thick {
+  background: none;
+  border-width: 2px;
+  border-style: solid;
+  line-height: 36px; }
+
+.btn-border:hover, .btn-border-thin:hover, .btn-border-thick:hover {
+  background-color: rgba(255, 213, 42, 0.9); }
+
+.btn-border:active, .btn-border-thin:active, .btn-border-thick:active, .btn-border.active, .btn-border-thin.active, .btn-border-thick.active, .btn-border.is-active, .btn-border-thin.is-active, .btn-border-thick.is-active {
+  box-shadow: none;
+  text-shadow: none;
+  transition-property: all;
+  transition-duration: 0.3s; }
+/*
+ * Border Optional Sizes
+ *
+ * A slight variation in border thickness
+ */
+.btn-border-thin {
+  border-width: 1px; }
+
+.btn-border-thick {
+  border-width: 3px; }
+/*
+ * Border Button Colors
+ *
+ * Create colors for buttons
+ * (.button-primary, .button-secondary, etc.)
+ */
+.btn-border, .btn-border-thin, .btn-border-thick {
+  /*
+   * Border Button Size Adjustment
+   *
+   * The line-height must be adjusted to compinsate for
+   * the width of the border.
+   */ }
+  .btn-border.btn-color-1, .btn-border-thin.btn-color-1, .btn-border-thick.btn-color-1 {
+    color: #f6c600; }
+    .btn-border.btn-color-1:hover, .btn-border-thin.btn-color-1:hover, .btn-border-thick.btn-color-1:hover, .btn-border.btn-color-1:focus, .btn-border-thin.btn-color-1:focus, .btn-border-thick.btn-color-1:focus {
+      background-color: rgba(255, 213, 42, 0.9);
+      color: rgba(51, 51, 51, 0.9); }
+    .btn-border.btn-color-1:active, .btn-border-thin.btn-color-1:active, .btn-border-thick.btn-color-1:active, .btn-border.btn-color-1.active, .btn-border-thin.btn-color-1.active, .btn-border-thick.btn-color-1.active, .btn-border.btn-color-1.is-active, .btn-border-thin.btn-color-1.is-active, .btn-border-thick.btn-color-1.is-active {
+      background-color: rgba(234, 191, 12, 0.7);
+      color: rgba(51, 51, 51, 0.5);
+      opacity: 0.3; }
+  .btn-border.btn-color-2, .btn-border-thin.btn-color-2, .btn-border-thick.btn-color-2 {
+    color: #ffe477; }
+    .btn-border.btn-color-2:hover, .btn-border-thin.btn-color-2:hover, .btn-border-thick.btn-color-2:hover, .btn-border.btn-color-2:focus, .btn-border-thin.btn-color-2:focus, .btn-border-thick.btn-color-2:focus {
+      background-color: rgba(255, 238, 170, 0.9);
+      color: rgba(51, 51, 51, 0.9); }
+    .btn-border.btn-color-2:active, .btn-border-thin.btn-color-2:active, .btn-border-thick.btn-color-2:active, .btn-border.btn-color-2.active, .btn-border-thin.btn-color-2.active, .btn-border-thick.btn-color-2.active, .btn-border.btn-color-2.is-active, .btn-border-thin.btn-color-2.is-active, .btn-border-thick.btn-color-2.is-active {
+      background-color: rgba(248, 224, 126, 0.7);
+      color: rgba(51, 51, 51, 0.5);
+      opacity: 0.3; }
+  .btn-border.btn-color-3, .btn-border-thin.btn-color-3, .btn-border-thick.btn-color-3 {
+    color: #bc9700; }
+    .btn-border.btn-color-3:hover, .btn-border-thin.btn-color-3:hover, .btn-border-thick.btn-color-3:hover, .btn-border.btn-color-3:focus, .btn-border-thin.btn-color-3:focus, .btn-border-thick.btn-color-3:focus {
+      background-color: rgba(239, 192, 0, 0.9);
+      color: rgba(255, 255, 255, 0.9); }
+    .btn-border.btn-color-3:active, .btn-border-thin.btn-color-3:active, .btn-border-thick.btn-color-3:active, .btn-border.btn-color-3.active, .btn-border-thin.btn-color-3.active, .btn-border-thick.btn-color-3.active, .btn-border.btn-color-3.is-active, .btn-border-thin.btn-color-3.is-active, .btn-border-thick.btn-color-3.is-active {
+      background-color: rgba(179, 145, 9, 0.7);
+      color: rgba(255, 255, 255, 0.5);
+      opacity: 0.3; }
+  .btn-border.btn-color-4, .btn-border-thin.btn-color-4, .btn-border-thick.btn-color-4 {
+    color: #66581f; }
+    .btn-border.btn-color-4:hover, .btn-border-thin.btn-color-4:hover, .btn-border-thick.btn-color-4:hover, .btn-border.btn-color-4:focus, .btn-border-thin.btn-color-4:focus, .btn-border-thick.btn-color-4:focus {
+      background-color: rgba(141, 122, 43, 0.9);
+      color: rgba(255, 255, 255, 0.9); }
+    .btn-border.btn-color-4:active, .btn-border-thin.btn-color-4:active, .btn-border-thick.btn-color-4:active, .btn-border.btn-color-4.active, .btn-border-thin.btn-color-4.active, .btn-border-thick.btn-color-4.active, .btn-border.btn-color-4.is-active, .btn-border-thin.btn-color-4.is-active, .btn-border-thick.btn-color-4.is-active {
+      background-color: rgba(95, 84, 38, 0.7);
+      color: rgba(255, 255, 255, 0.5);
+      opacity: 0.3; }
+  .btn-border.btn-color-5, .btn-border-thin.btn-color-5, .btn-border-thick.btn-color-5 {
+    color: #f7efcb; }
+    .btn-border.btn-color-5:hover, .btn-border-thin.btn-color-5:hover, .btn-border-thick.btn-color-5:hover, .btn-border.btn-color-5:focus, .btn-border-thin.btn-color-5:focus, .btn-border-thick.btn-color-5:focus {
+      background-color: rgba(254, 253, 247, 0.9);
+      color: rgba(51, 51, 51, 0.9); }
+    .btn-border.btn-color-5:active, .btn-border-thin.btn-color-5:active, .btn-border-thick.btn-color-5:active, .btn-border.btn-color-5.active, .btn-border-thin.btn-color-5.active, .btn-border-thick.btn-color-5.active, .btn-border.btn-color-5.is-active, .btn-border-thin.btn-color-5.is-active, .btn-border-thick.btn-color-5.is-active {
+      background-color: rgba(244, 237, 206, 0.7);
+      color: rgba(51, 51, 51, 0.5);
+      opacity: 0.3; }
+  .btn-border.btn-giant, .btn-border-thin.btn-giant, .btn-border-thick.btn-giant {
+    line-height: 66px; }
+  .btn-border.btn-jumbo, .btn-border-thin.btn-jumbo, .btn-border-thick.btn-jumbo {
+    line-height: 56px; }
+  .btn-border.btn-large, .btn-border-thin.btn-large, .btn-border-thick.btn-large {
+    line-height: 46px; }
+  .btn-border.btn-normal, .btn-border-thin.btn-normal, .btn-border-thick.btn-normal {
+    line-height: 36px; }
+  .btn-border.btn-small, .btn-border-thin.btn-small, .btn-border-thick.btn-small {
+    line-height: 26px; }
+  .btn-border.btn-tiny, .btn-border-thin.btn-tiny, .btn-border-thick.btn-tiny {
+    line-height: 20px; }
+/*
+ * Border Buttons
+ *
+ * These buttons have no fill they only have a
+ * border to define their hit target.
+ */
+.btn-borderless {
+  background: none;
+  border: none;
+  padding: 0 8px !important;
+  color: #f6c600;
+  font-size: 1.3em;
+  font-weight: 200;
+  /*
+   * Borderless Button Colors
+   *
+   * Create colors for buttons
+   * (.button-primary, .button-secondary, etc.)
+   */
+  /*
+   * Borderles Size Adjustment
+   *
+   * The font-size must be large to compinsate for
+   * the lack of a hit target.
+   */ }
+
+.btn-borderless:hover, .btn-borderless:focus {
+  background: none; }
+
+.btn-borderless:active, .btn-borderless.active, .btn-borderless.is-active {
+  box-shadow: none;
+  text-shadow: none;
+  transition-property: all;
+  transition-duration: 0.3s;
+  opacity: 0.3; }
+  .btn-borderless.btn-color-1 {
+    color: #f6c600; }
+  .btn-borderless.btn-color-2 {
+    color: #ffe477; }
+  .btn-borderless.btn-color-3 {
+    color: #bc9700; }
+  .btn-borderless.btn-color-4 {
+    color: #66581f; }
+  .btn-borderless.btn-color-5 {
+    color: #f7efcb; }
+  .btn-borderless.btn-giant {
+    font-size: 2.275em;
+    height: 18.275em;
+    line-height: 18.275em; }
+  .btn-borderless.btn-jumbo {
+    font-size: 1.95em;
+    height: 17.95em;
+    line-height: 17.95em; }
+  .btn-borderless.btn-large {
+    font-size: 1.625em;
+    height: 17.625em;
+    line-height: 17.625em; }
+  .btn-borderless.btn-normal {
+    font-size: 1.3em;
+    height: 17.3em;
+    line-height: 17.3em; }
+  .btn-borderless.btn-small {
+    font-size: 0.975em;
+    height: 16.975em;
+    line-height: 16.975em; }
+  .btn-borderless.btn-tiny {
+    font-size: 0.78em;
+    height: 16.78em;
+    line-height: 16.78em; }
+/*
+ * Raised Buttons
+ *
+ * A classic looking button that offers
+ * great depth and affordance.
+ */
+.btn-raised {
+  border-color: #ddb100;
+  border-style: solid;
+  border-width: 1px;
+  line-height: 38px;
+  background: linear-gradient(#ffce06, #ddb100);
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15); }
+
+.btn-raised:hover, .btn-raised:focus {
+  background: linear-gradient(#ffd320, #d2a900); }
+
+.btn-raised:active, .btn-raised.active, .btn-raised.is-active {
+  background: #eabf0c;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(255, 255, 255, 1); }
+/*
+ * Raised Button Colors
+ *
+ * Create colors for raised buttons
+ */
+.btn-raised.btn-color-1 {
+  border-color: #ddb100;
+  background: linear-gradient(#ffd011, #ddb100); }
+  .btn-raised.btn-color-1:hover, .btn-raised.btn-color-1:focus {
+    background: linear-gradient(#ffd320, #d2a900); }
+  .btn-raised.btn-color-1:active, .btn-raised.btn-color-1.active, .btn-raised.btn-color-1.is-active {
+    border-color: #c39d00;
+    background: #eabf0c; }
+  .btn-raised.btn-color-2 {
+    border-color: #ffdf5e;
+    background: linear-gradient(#ffe991, #ffdf5e); }
+  .btn-raised.btn-color-2:hover, .btn-raised.btn-color-2:focus {
+    background: linear-gradient(#ffeca0, #ffdd53); }
+  .btn-raised.btn-color-2:active, .btn-raised.btn-color-2.active, .btn-raised.btn-color-2.is-active {
+    border-color: #ffda44;
+    background: #f8e07e; }
+  .btn-raised.btn-color-3 {
+    border-color: #a38300;
+    background: linear-gradient(#d6ab00, #a38300); }
+  .btn-raised.btn-color-3:hover, .btn-raised.btn-color-3:focus {
+    background: linear-gradient(#e5b800, #987a00); }
+  .btn-raised.btn-color-3:active, .btn-raised.btn-color-3.active, .btn-raised.btn-color-3.is-active {
+    border-color: #896e00;
+    background: #b39109; }
+  .btn-raised.btn-color-4 {
+    border-color: #524719;
+    background: linear-gradient(#7a6925, #524719); }
+  .btn-raised.btn-color-4:hover, .btn-raised.btn-color-4:focus {
+    background: linear-gradient(#857329, #4b4017); }
+  .btn-raised.btn-color-4:active, .btn-raised.btn-color-4.active, .btn-raised.btn-color-4.is-active {
+    border-color: #3f3613;
+    background: #5f5426; }
+  .btn-raised.btn-color-5 {
+    border-color: #f4e8b5;
+    background: linear-gradient(#faf6e1, #f4e8b5); }
+  .btn-raised.btn-color-5:hover, .btn-raised.btn-color-5:focus {
+    background: linear-gradient(#fcfaee, #f2e5ac); }
+  .btn-raised.btn-color-5:active, .btn-raised.btn-color-5.active, .btn-raised.btn-color-5.is-active {
+    border-color: #f0e19f;
+    background: #f4edce; }
+/*
+ * 3D Buttons
+ *
+ * These buttons have a heavy three dimensional
+ * style that mimics the visual appearance of a
+ * real life button.
+ */
+.btn-3d {
+  position: relative;
+  top: 0;
+  box-shadow: 0 7px 0 #907400, 0 8px 3px rgba(0, 0, 0, 0.2); }
+
+.btn-3d:hover, .btn-3d:focus {
+  box-shadow: 0 7px 0 #907400, 0 8px 3px rgba(0, 0, 0, 0.2); }
+
+.btn-3d:active, .btn-3d.active, .btn-3d.is-active {
+  top: 5px;
+  transition-property: all;
+  transition-duration: 0.15s;
+  box-shadow: 0 2px 0 #907400, 0 3px 3px rgba(0, 0, 0, 0.2); }
+/*
+ * 3D Button Colors
+ *
+ * Create colors for buttons
+ * (.button-primary, .button-secondary, etc.)
+ */
+.btn-3d.btn-color-1 {
+  box-shadow: 0 7px 0 #c39d00, 0 8px 3px rgba(0, 0, 0, 0.3); }
+  .btn-3d.btn-color-1:hover, .btn-3d.btn-color-1:focus {
+    box-shadow: 0 7px 0 #b99500, 0 8px 3px rgba(0, 0, 0, 0.3); }
+  .btn-3d.btn-color-1:active, .btn-3d.btn-color-1.active, .btn-3d.btn-color-1.is-active {
+    box-shadow: 0 2px 0 #907400, 0 3px 3px rgba(0, 0, 0, 0.2); }
+  .btn-3d.btn-color-2 {
+    box-shadow: 0 7px 0 #ffda44, 0 8px 3px rgba(0, 0, 0, 0.3); }
+  .btn-3d.btn-color-2:hover, .btn-3d.btn-color-2:focus {
+    box-shadow: 0 7px 0 #ffd83a, 0 8px 3px rgba(0, 0, 0, 0.3); }
+  .btn-3d.btn-color-2:active, .btn-3d.btn-color-2.active, .btn-3d.btn-color-2.is-active {
+    box-shadow: 0 2px 0 #ffd011, 0 3px 3px rgba(0, 0, 0, 0.2); }
+  .btn-3d.btn-color-3 {
+    box-shadow: 0 7px 0 #896e00, 0 8px 3px rgba(0, 0, 0, 0.3); }
+  .btn-3d.btn-color-3:hover, .btn-3d.btn-color-3:focus {
+    box-shadow: 0 7px 0 #7f6600, 0 8px 3px rgba(0, 0, 0, 0.3); }
+  .btn-3d.btn-color-3:active, .btn-3d.btn-color-3.active, .btn-3d.btn-color-3.is-active {
+    box-shadow: 0 2px 0 #564500, 0 3px 3px rgba(0, 0, 0, 0.2); }
+  .btn-3d.btn-color-4 {
+    box-shadow: 0 7px 0 #3f3613, 0 8px 3px rgba(0, 0, 0, 0.3); }
+  .btn-3d.btn-color-4:hover, .btn-3d.btn-color-4:focus {
+    box-shadow: 0 7px 0 #373011, 0 8px 3px rgba(0, 0, 0, 0.3); }
+  .btn-3d.btn-color-4:active, .btn-3d.btn-color-4.active, .btn-3d.btn-color-4.is-active {
+    box-shadow: 0 2px 0 #181507, 0 3px 3px rgba(0, 0, 0, 0.2); }
+  .btn-3d.btn-color-5 {
+    box-shadow: 0 7px 0 #f0e19f, 0 8px 3px rgba(0, 0, 0, 0.3); }
+  .btn-3d.btn-color-5:hover, .btn-3d.btn-color-5:focus {
+    box-shadow: 0 7px 0 #efdf96, 0 8px 3px rgba(0, 0, 0, 0.3); }
+  .btn-3d.btn-color-5:active, .btn-3d.btn-color-5.active, .btn-3d.btn-color-5.is-active {
+    box-shadow: 0 2px 0 #e9d473, 0 3px 3px rgba(0, 0, 0, 0.2); }
+/*
+ * Glowing Buttons
+ *
+ * A pulse like glow that appears
+ * rythmically around the edges of
+ * a button.
+ */
+/*
+ * Glow animation mixin for Compass users
+ *
+ */
+/*
+ * Glowing Keyframes
+ *
+ */
+@keyframes glowing {
+  from {
+    box-shadow: 0 0 0 rgba(44, 154, 219, 0.3); }
+
+  50% {
+    box-shadow: 0 0 20px rgba(44, 154, 219, 0.8); }
+
+  to {
+    box-shadow: 0 0 0 rgba(44, 154, 219, 0.3); } }
+
+/*
+ * Glowing Keyframes for various colors
+ *
+ */
+
+@keyframes glowing-color-1 {
+    from {
+      box-shadow: 0 0 0 rgba(246, 198, 0, 0.3); }
+    50% {
+      box-shadow: 0 0 20px rgba(246, 198, 0, 0.8); }
+    to {
+      box-shadow: 0 0 0 rgba(246, 198, 0, 0.3); } }
+
+/*
+ * Glowing Keyframes for various colors
+ *
+ */
+
+@keyframes glowing-color-2 {
+    from {
+      box-shadow: 0 0 0 rgba(255, 228, 119, 0.3); }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 228, 119, 0.8); }
+    to {
+      box-shadow: 0 0 0 rgba(255, 228, 119, 0.3); } }
+
+/*
+ * Glowing Keyframes for various colors
+ *
+ */
+
+@keyframes glowing-color-3 {
+    from {
+      box-shadow: 0 0 0 rgba(188, 151, 0, 0.3); }
+    50% {
+      box-shadow: 0 0 20px rgba(188, 151, 0, 0.8); }
+    to {
+      box-shadow: 0 0 0 rgba(188, 151, 0, 0.3); } }
+
+/*
+ * Glowing Keyframes for various colors
+ *
+ */
+
+@keyframes glowing-color-4 {
+    from {
+      box-shadow: 0 0 0 rgba(102, 88, 31, 0.3); }
+    50% {
+      box-shadow: 0 0 20px rgba(102, 88, 31, 0.8); }
+    to {
+      box-shadow: 0 0 0 rgba(102, 88, 31, 0.3); } }
+
+/*
+ * Glowing Keyframes for various colors
+ *
+ */
+
+@keyframes glowing-color-5 {
+    from {
+      box-shadow: 0 0 0 rgba(247, 239, 203, 0.3); }
+    50% {
+      box-shadow: 0 0 20px rgba(247, 239, 203, 0.8); }
+    to {
+      box-shadow: 0 0 0 rgba(247, 239, 203, 0.3); } }
+/*
+ * Glowing Buttons Base Styes
+ *
+ * A pulse like glow that appears
+ * rythmically around the edges of
+ * a button.
+ */
+.btn-glow {
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-name: glowing; }
+
+.btn-glow:active, .btn-glow.active, .btn-glow.is-active {
+  animation-name: none; }
+/*
+ * Glowing Button Colors
+ *
+ * Create colors for glowing buttons
+ */
+.btn-glow.btn-color-1 {
+  animation-name: glowing-color-1; }
+  .btn-glow.btn-color-2 {
+    animation-name: glowing-color-2; }
+  .btn-glow.btn-color-3 {
+    animation-name: glowing-color-3; }
+  .btn-glow.btn-color-4 {
+    animation-name: glowing-color-4; }
+  .btn-glow.btn-color-5 {
+    animation-name: glowing-color-5; }
+/*
+ * Dropdown menu buttons
+ *
+ * A dropdown menu appears
+ * when a button is pressed
+ */
+/*
+ * Dropdown Container
+ *
+ */
+.btn-dropdown {
+  position: relative;
+  overflow: visible;
+  display: inline-block; }
+/*
+ * Dropdown List Style
+ *
+ */
+.btn-dropdown-list {
+  display: none;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  min-width: 100%;
+  list-style-type: none;
+  background: rgba(255, 213, 42, 0.95);
+  border-style: solid;
+  border-width: 1px;
+  border-color: #c39d00;
+  font-family: inherit;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  box-sizing: border-box;
+  /*
+   * Dropdown Above
+   *
+   */ }
+
+.btn-dropdown-list.is-below {
+  /*
+   * Dropdown Below
+   *
+   */
+  top: 100%;
+  border-top: none;
+  border-radius: 0 0 3px 3px; }
+
+.btn-dropdown-list.is-above {
+  bottom: 100%;
+  top: auto;
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 -2px 7px rgba(0, 0, 0, 0.2); }
+/*
+ * Dropdown Buttons
+ *
+ */
+.btn-dropdown-list > li {
+  padding: 0;
+  margin: 0;
+  display: block; }
+
+.btn-dropdown-list > li > a {
+  display: block;
+  line-height: 40px;
+  font-size: 0.8em;
+  padding: 5px 10px;
+  float: none;
+  color: #333;
+  text-decoration: none; }
+  .btn-dropdown-list > li > a:hover {
+    color: #2b2b2b;
+    background: #ffce06;
+    text-decoration: none; }
+
+.btn-dropdown-divider {
+  border-top: 1px solid #e7ba00; }
+/*
+ * Dropdown Colors
+ *
+ * Create colors for buttons
+ * (.button-primary, .button-secondary, etc.)
+ */
+.btn-dropdown.btn-dropdown-color-1 .btn-dropdown-list {
+  background: rgba(246, 198, 0, 0.95);
+  border-color: #c39d00; }
+  .btn-dropdown.btn-dropdown-color-1 .btn-dropdown-list .btn-dropdown-divider {
+    border-color: #d2a900; }
+  .btn-dropdown.btn-dropdown-color-1 .btn-dropdown-list > li > a {
+    color: #333; }
+    .btn-dropdown.btn-dropdown-color-1 .btn-dropdown-list > li > a:hover {
+      color: #262626;
+      background: #ddb100; }
+  .btn-dropdown.btn-dropdown-color-2 .btn-dropdown-list {
+    background: rgba(255, 228, 119, 0.95);
+    border-color: #ffda44; }
+  .btn-dropdown.btn-dropdown-color-2 .btn-dropdown-list .btn-dropdown-divider {
+    border-color: #ffdd53; }
+  .btn-dropdown.btn-dropdown-color-2 .btn-dropdown-list > li > a {
+    color: #333; }
+    .btn-dropdown.btn-dropdown-color-2 .btn-dropdown-list > li > a:hover {
+      color: #262626;
+      background: #ffdf5e; }
+  .btn-dropdown.btn-dropdown-color-3 .btn-dropdown-list {
+    background: rgba(188, 151, 0, 0.95);
+    border-color: #896e00; }
+  .btn-dropdown.btn-dropdown-color-3 .btn-dropdown-list .btn-dropdown-divider {
+    border-color: #987a00; }
+  .btn-dropdown.btn-dropdown-color-3 .btn-dropdown-list > li > a {
+    color: #fff; }
+    .btn-dropdown.btn-dropdown-color-3 .btn-dropdown-list > li > a:hover {
+      color: #f2f2f2;
+      background: #a38300; }
+  .btn-dropdown.btn-dropdown-color-4 .btn-dropdown-list {
+    background: rgba(102, 88, 31, 0.95);
+    border-color: #3f3613; }
+  .btn-dropdown.btn-dropdown-color-4 .btn-dropdown-list .btn-dropdown-divider {
+    border-color: #4b4017; }
+  .btn-dropdown.btn-dropdown-color-4 .btn-dropdown-list > li > a {
+    color: #fff; }
+    .btn-dropdown.btn-dropdown-color-4 .btn-dropdown-list > li > a:hover {
+      color: #f2f2f2;
+      background: #524719; }
+  .btn-dropdown.btn-dropdown-color-5 .btn-dropdown-list {
+    background: rgba(247, 239, 203, 0.95);
+    border-color: #f0e19f; }
+  .btn-dropdown.btn-dropdown-color-5 .btn-dropdown-list .btn-dropdown-divider {
+    border-color: #f2e5ac; }
+  .btn-dropdown.btn-dropdown-color-5 .btn-dropdown-list > li > a {
+    color: #333; }
+    .btn-dropdown.btn-dropdown-color-5 .btn-dropdown-list > li > a:hover {
+      color: #262626;
+      background: #f4e8b5; }
+/*
+ * Buton Groups
+ *
+ * A group of related buttons
+ * displayed edge to edge
+ */
+.btn-group {
+  *zoom: 1;
+  position: relative;
+  display: inline-block; }
+
+.btn-group:after, .btn-group:before {
+  content: '.';
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0; }
+
+.btn-group .btn, .btn-group .btn-dropdown {
+  float: left; }
+  .btn-group .btn:not(:first-child):not(:last-child), .btn-group .btn-dropdown:not(:first-child):not(:last-child) {
+    border-radius: 0;
+    border-right: none; }
+  .btn-group .btn:first-child, .btn-group .btn-dropdown:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none; }
+  .btn-group .btn:last-child, .btn-group .btn-dropdown:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; }
+/*
+ * Button Wrapper
+ *
+ * A wrap around effect to highlight
+ * the shape of the button and offer
+ * a subtle visual effect.
+ */
+.btn-wrap {
+  border: 1px solid #e3e3e3;
+  display: inline-block;
+  padding: 9px;
+  background: linear-gradient(#f2f2f2, #fff);
+  border-radius: 200px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04); }
+/*
+ * Long Shadow Buttons
+ *
+ * A visual effect adding a flat shadow to the text of a button
+ */
+/*
+ * Long Shadow Function
+ *
+ * Loops $length times building a long shadow. Defaults downward right
+ */
+/*
+ * LONG SHADOW MIXIN
+ *
+ */
+/*
+ * Shadow Right
+ *
+ */
+.btn-longshadow, .btn-longshadow-right {
+  overflow: hidden; }
+  .btn-longshadow.btn-color-1, .btn-longshadow-right.btn-color-1 {
+    text-shadow: 0px 0px #c39d00, 1px 1px #c39d00, 2px 2px #c39d00, 3px 3px #c39d00, 4px 4px #c39d00, 5px 5px #c39d00, 6px 6px #c39d00, 7px 7px #c39d00, 8px 8px #c39d00, 9px 9px #c39d00, 10px 10px #c39d00, 11px 11px #c39d00, 12px 12px #c39d00, 13px 13px #c39d00, 14px 14px #c39d00, 15px 15px #c39d00, 16px 16px #c39d00, 17px 17px #c39d00, 18px 18px #c39d00, 19px 19px #c39d00, 20px 20px #c39d00, 21px 21px #c39d00, 22px 22px #c39d00, 23px 23px #c39d00, 24px 24px #c39d00, 25px 25px #c39d00, 26px 26px #c39d00, 27px 27px #c39d00, 28px 28px #c39d00, 29px 29px #c39d00, 30px 30px #c39d00, 31px 31px #c39d00, 32px 32px #c39d00, 33px 33px #c39d00, 34px 34px #c39d00, 35px 35px #c39d00, 36px 36px #c39d00, 37px 37px #c39d00, 38px 38px #c39d00, 39px 39px #c39d00, 40px 40px #c39d00, 41px 41px #c39d00, 42px 42px #c39d00, 43px 43px #c39d00, 44px 44px #c39d00, 45px 45px #c39d00, 46px 46px #c39d00, 47px 47px #c39d00, 48px 48px #c39d00, 49px 49px #c39d00, 50px 50px #c39d00, 51px 51px #c39d00, 52px 52px #c39d00, 53px 53px #c39d00, 54px 54px #c39d00, 55px 55px #c39d00, 56px 56px #c39d00, 57px 57px #c39d00, 58px 58px #c39d00, 59px 59px #c39d00, 60px 60px #c39d00, 61px 61px #c39d00, 62px 62px #c39d00, 63px 63px #c39d00, 64px 64px #c39d00, 65px 65px #c39d00, 66px 66px #c39d00, 67px 67px #c39d00, 68px 68px #c39d00, 69px 69px #c39d00, 70px 70px #c39d00, 71px 71px #c39d00, 72px 72px #c39d00, 73px 73px #c39d00, 74px 74px #c39d00, 75px 75px #c39d00, 76px 76px #c39d00, 77px 77px #c39d00, 78px 78px #c39d00, 79px 79px #c39d00, 80px 80px #c39d00, 81px 81px #c39d00, 82px 82px #c39d00, 83px 83px #c39d00, 84px 84px #c39d00, 85px 85px #c39d00; }
+  .btn-longshadow.btn-color-1:active, .btn-longshadow-right.btn-color-1:active, .btn-longshadow.btn-color-1.active, .btn-longshadow-right.btn-color-1.active, .btn-longshadow.btn-color-1.is-active, .btn-longshadow-right.btn-color-1.is-active {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+  .btn-longshadow.btn-color-2, .btn-longshadow-right.btn-color-2 {
+    text-shadow: 0px 0px #ffda44, 1px 1px #ffda44, 2px 2px #ffda44, 3px 3px #ffda44, 4px 4px #ffda44, 5px 5px #ffda44, 6px 6px #ffda44, 7px 7px #ffda44, 8px 8px #ffda44, 9px 9px #ffda44, 10px 10px #ffda44, 11px 11px #ffda44, 12px 12px #ffda44, 13px 13px #ffda44, 14px 14px #ffda44, 15px 15px #ffda44, 16px 16px #ffda44, 17px 17px #ffda44, 18px 18px #ffda44, 19px 19px #ffda44, 20px 20px #ffda44, 21px 21px #ffda44, 22px 22px #ffda44, 23px 23px #ffda44, 24px 24px #ffda44, 25px 25px #ffda44, 26px 26px #ffda44, 27px 27px #ffda44, 28px 28px #ffda44, 29px 29px #ffda44, 30px 30px #ffda44, 31px 31px #ffda44, 32px 32px #ffda44, 33px 33px #ffda44, 34px 34px #ffda44, 35px 35px #ffda44, 36px 36px #ffda44, 37px 37px #ffda44, 38px 38px #ffda44, 39px 39px #ffda44, 40px 40px #ffda44, 41px 41px #ffda44, 42px 42px #ffda44, 43px 43px #ffda44, 44px 44px #ffda44, 45px 45px #ffda44, 46px 46px #ffda44, 47px 47px #ffda44, 48px 48px #ffda44, 49px 49px #ffda44, 50px 50px #ffda44, 51px 51px #ffda44, 52px 52px #ffda44, 53px 53px #ffda44, 54px 54px #ffda44, 55px 55px #ffda44, 56px 56px #ffda44, 57px 57px #ffda44, 58px 58px #ffda44, 59px 59px #ffda44, 60px 60px #ffda44, 61px 61px #ffda44, 62px 62px #ffda44, 63px 63px #ffda44, 64px 64px #ffda44, 65px 65px #ffda44, 66px 66px #ffda44, 67px 67px #ffda44, 68px 68px #ffda44, 69px 69px #ffda44, 70px 70px #ffda44, 71px 71px #ffda44, 72px 72px #ffda44, 73px 73px #ffda44, 74px 74px #ffda44, 75px 75px #ffda44, 76px 76px #ffda44, 77px 77px #ffda44, 78px 78px #ffda44, 79px 79px #ffda44, 80px 80px #ffda44, 81px 81px #ffda44, 82px 82px #ffda44, 83px 83px #ffda44, 84px 84px #ffda44, 85px 85px #ffda44; }
+  .btn-longshadow.btn-color-2:active, .btn-longshadow-right.btn-color-2:active, .btn-longshadow.btn-color-2.active, .btn-longshadow-right.btn-color-2.active, .btn-longshadow.btn-color-2.is-active, .btn-longshadow-right.btn-color-2.is-active {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+  .btn-longshadow.btn-color-3, .btn-longshadow-right.btn-color-3 {
+    text-shadow: 0px 0px #896e00, 1px 1px #896e00, 2px 2px #896e00, 3px 3px #896e00, 4px 4px #896e00, 5px 5px #896e00, 6px 6px #896e00, 7px 7px #896e00, 8px 8px #896e00, 9px 9px #896e00, 10px 10px #896e00, 11px 11px #896e00, 12px 12px #896e00, 13px 13px #896e00, 14px 14px #896e00, 15px 15px #896e00, 16px 16px #896e00, 17px 17px #896e00, 18px 18px #896e00, 19px 19px #896e00, 20px 20px #896e00, 21px 21px #896e00, 22px 22px #896e00, 23px 23px #896e00, 24px 24px #896e00, 25px 25px #896e00, 26px 26px #896e00, 27px 27px #896e00, 28px 28px #896e00, 29px 29px #896e00, 30px 30px #896e00, 31px 31px #896e00, 32px 32px #896e00, 33px 33px #896e00, 34px 34px #896e00, 35px 35px #896e00, 36px 36px #896e00, 37px 37px #896e00, 38px 38px #896e00, 39px 39px #896e00, 40px 40px #896e00, 41px 41px #896e00, 42px 42px #896e00, 43px 43px #896e00, 44px 44px #896e00, 45px 45px #896e00, 46px 46px #896e00, 47px 47px #896e00, 48px 48px #896e00, 49px 49px #896e00, 50px 50px #896e00, 51px 51px #896e00, 52px 52px #896e00, 53px 53px #896e00, 54px 54px #896e00, 55px 55px #896e00, 56px 56px #896e00, 57px 57px #896e00, 58px 58px #896e00, 59px 59px #896e00, 60px 60px #896e00, 61px 61px #896e00, 62px 62px #896e00, 63px 63px #896e00, 64px 64px #896e00, 65px 65px #896e00, 66px 66px #896e00, 67px 67px #896e00, 68px 68px #896e00, 69px 69px #896e00, 70px 70px #896e00, 71px 71px #896e00, 72px 72px #896e00, 73px 73px #896e00, 74px 74px #896e00, 75px 75px #896e00, 76px 76px #896e00, 77px 77px #896e00, 78px 78px #896e00, 79px 79px #896e00, 80px 80px #896e00, 81px 81px #896e00, 82px 82px #896e00, 83px 83px #896e00, 84px 84px #896e00, 85px 85px #896e00; }
+  .btn-longshadow.btn-color-3:active, .btn-longshadow-right.btn-color-3:active, .btn-longshadow.btn-color-3.active, .btn-longshadow-right.btn-color-3.active, .btn-longshadow.btn-color-3.is-active, .btn-longshadow-right.btn-color-3.is-active {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+  .btn-longshadow.btn-color-4, .btn-longshadow-right.btn-color-4 {
+    text-shadow: 0px 0px #3f3613, 1px 1px #3f3613, 2px 2px #3f3613, 3px 3px #3f3613, 4px 4px #3f3613, 5px 5px #3f3613, 6px 6px #3f3613, 7px 7px #3f3613, 8px 8px #3f3613, 9px 9px #3f3613, 10px 10px #3f3613, 11px 11px #3f3613, 12px 12px #3f3613, 13px 13px #3f3613, 14px 14px #3f3613, 15px 15px #3f3613, 16px 16px #3f3613, 17px 17px #3f3613, 18px 18px #3f3613, 19px 19px #3f3613, 20px 20px #3f3613, 21px 21px #3f3613, 22px 22px #3f3613, 23px 23px #3f3613, 24px 24px #3f3613, 25px 25px #3f3613, 26px 26px #3f3613, 27px 27px #3f3613, 28px 28px #3f3613, 29px 29px #3f3613, 30px 30px #3f3613, 31px 31px #3f3613, 32px 32px #3f3613, 33px 33px #3f3613, 34px 34px #3f3613, 35px 35px #3f3613, 36px 36px #3f3613, 37px 37px #3f3613, 38px 38px #3f3613, 39px 39px #3f3613, 40px 40px #3f3613, 41px 41px #3f3613, 42px 42px #3f3613, 43px 43px #3f3613, 44px 44px #3f3613, 45px 45px #3f3613, 46px 46px #3f3613, 47px 47px #3f3613, 48px 48px #3f3613, 49px 49px #3f3613, 50px 50px #3f3613, 51px 51px #3f3613, 52px 52px #3f3613, 53px 53px #3f3613, 54px 54px #3f3613, 55px 55px #3f3613, 56px 56px #3f3613, 57px 57px #3f3613, 58px 58px #3f3613, 59px 59px #3f3613, 60px 60px #3f3613, 61px 61px #3f3613, 62px 62px #3f3613, 63px 63px #3f3613, 64px 64px #3f3613, 65px 65px #3f3613, 66px 66px #3f3613, 67px 67px #3f3613, 68px 68px #3f3613, 69px 69px #3f3613, 70px 70px #3f3613, 71px 71px #3f3613, 72px 72px #3f3613, 73px 73px #3f3613, 74px 74px #3f3613, 75px 75px #3f3613, 76px 76px #3f3613, 77px 77px #3f3613, 78px 78px #3f3613, 79px 79px #3f3613, 80px 80px #3f3613, 81px 81px #3f3613, 82px 82px #3f3613, 83px 83px #3f3613, 84px 84px #3f3613, 85px 85px #3f3613; }
+  .btn-longshadow.btn-color-4:active, .btn-longshadow-right.btn-color-4:active, .btn-longshadow.btn-color-4.active, .btn-longshadow-right.btn-color-4.active, .btn-longshadow.btn-color-4.is-active, .btn-longshadow-right.btn-color-4.is-active {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+  .btn-longshadow.btn-color-5, .btn-longshadow-right.btn-color-5 {
+    text-shadow: 0px 0px #f0e19f, 1px 1px #f0e19f, 2px 2px #f0e19f, 3px 3px #f0e19f, 4px 4px #f0e19f, 5px 5px #f0e19f, 6px 6px #f0e19f, 7px 7px #f0e19f, 8px 8px #f0e19f, 9px 9px #f0e19f, 10px 10px #f0e19f, 11px 11px #f0e19f, 12px 12px #f0e19f, 13px 13px #f0e19f, 14px 14px #f0e19f, 15px 15px #f0e19f, 16px 16px #f0e19f, 17px 17px #f0e19f, 18px 18px #f0e19f, 19px 19px #f0e19f, 20px 20px #f0e19f, 21px 21px #f0e19f, 22px 22px #f0e19f, 23px 23px #f0e19f, 24px 24px #f0e19f, 25px 25px #f0e19f, 26px 26px #f0e19f, 27px 27px #f0e19f, 28px 28px #f0e19f, 29px 29px #f0e19f, 30px 30px #f0e19f, 31px 31px #f0e19f, 32px 32px #f0e19f, 33px 33px #f0e19f, 34px 34px #f0e19f, 35px 35px #f0e19f, 36px 36px #f0e19f, 37px 37px #f0e19f, 38px 38px #f0e19f, 39px 39px #f0e19f, 40px 40px #f0e19f, 41px 41px #f0e19f, 42px 42px #f0e19f, 43px 43px #f0e19f, 44px 44px #f0e19f, 45px 45px #f0e19f, 46px 46px #f0e19f, 47px 47px #f0e19f, 48px 48px #f0e19f, 49px 49px #f0e19f, 50px 50px #f0e19f, 51px 51px #f0e19f, 52px 52px #f0e19f, 53px 53px #f0e19f, 54px 54px #f0e19f, 55px 55px #f0e19f, 56px 56px #f0e19f, 57px 57px #f0e19f, 58px 58px #f0e19f, 59px 59px #f0e19f, 60px 60px #f0e19f, 61px 61px #f0e19f, 62px 62px #f0e19f, 63px 63px #f0e19f, 64px 64px #f0e19f, 65px 65px #f0e19f, 66px 66px #f0e19f, 67px 67px #f0e19f, 68px 68px #f0e19f, 69px 69px #f0e19f, 70px 70px #f0e19f, 71px 71px #f0e19f, 72px 72px #f0e19f, 73px 73px #f0e19f, 74px 74px #f0e19f, 75px 75px #f0e19f, 76px 76px #f0e19f, 77px 77px #f0e19f, 78px 78px #f0e19f, 79px 79px #f0e19f, 80px 80px #f0e19f, 81px 81px #f0e19f, 82px 82px #f0e19f, 83px 83px #f0e19f, 84px 84px #f0e19f, 85px 85px #f0e19f; }
+  .btn-longshadow.btn-color-5:active, .btn-longshadow-right.btn-color-5:active, .btn-longshadow.btn-color-5.active, .btn-longshadow-right.btn-color-5.active, .btn-longshadow.btn-color-5.is-active, .btn-longshadow-right.btn-color-5.is-active {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+/*
+ * Shadow Left
+ *
+ */
+.btn-longshadow-left {
+  overflow: hidden; }
+  .btn-longshadow-left.btn-color-1 {
+    text-shadow: 0px 0px #c39d00, -1px 1px #c39d00, -2px 2px #c39d00, -3px 3px #c39d00, -4px 4px #c39d00, -5px 5px #c39d00, -6px 6px #c39d00, -7px 7px #c39d00, -8px 8px #c39d00, -9px 9px #c39d00, -10px 10px #c39d00, -11px 11px #c39d00, -12px 12px #c39d00, -13px 13px #c39d00, -14px 14px #c39d00, -15px 15px #c39d00, -16px 16px #c39d00, -17px 17px #c39d00, -18px 18px #c39d00, -19px 19px #c39d00, -20px 20px #c39d00, -21px 21px #c39d00, -22px 22px #c39d00, -23px 23px #c39d00, -24px 24px #c39d00, -25px 25px #c39d00, -26px 26px #c39d00, -27px 27px #c39d00, -28px 28px #c39d00, -29px 29px #c39d00, -30px 30px #c39d00, -31px 31px #c39d00, -32px 32px #c39d00, -33px 33px #c39d00, -34px 34px #c39d00, -35px 35px #c39d00, -36px 36px #c39d00, -37px 37px #c39d00, -38px 38px #c39d00, -39px 39px #c39d00, -40px 40px #c39d00, -41px 41px #c39d00, -42px 42px #c39d00, -43px 43px #c39d00, -44px 44px #c39d00, -45px 45px #c39d00, -46px 46px #c39d00, -47px 47px #c39d00, -48px 48px #c39d00, -49px 49px #c39d00, -50px 50px #c39d00, -51px 51px #c39d00, -52px 52px #c39d00, -53px 53px #c39d00, -54px 54px #c39d00, -55px 55px #c39d00, -56px 56px #c39d00, -57px 57px #c39d00, -58px 58px #c39d00, -59px 59px #c39d00, -60px 60px #c39d00, -61px 61px #c39d00, -62px 62px #c39d00, -63px 63px #c39d00, -64px 64px #c39d00, -65px 65px #c39d00, -66px 66px #c39d00, -67px 67px #c39d00, -68px 68px #c39d00, -69px 69px #c39d00, -70px 70px #c39d00, -71px 71px #c39d00, -72px 72px #c39d00, -73px 73px #c39d00, -74px 74px #c39d00, -75px 75px #c39d00, -76px 76px #c39d00, -77px 77px #c39d00, -78px 78px #c39d00, -79px 79px #c39d00, -80px 80px #c39d00, -81px 81px #c39d00, -82px 82px #c39d00, -83px 83px #c39d00, -84px 84px #c39d00, -85px 85px #c39d00; }
+  .btn-longshadow-left.btn-color-1:active, .btn-longshadow-left.btn-color-1.active, .btn-longshadow-left.btn-color-1.is-active {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+  .btn-longshadow-left.btn-color-2 {
+    text-shadow: 0px 0px #ffda44, -1px 1px #ffda44, -2px 2px #ffda44, -3px 3px #ffda44, -4px 4px #ffda44, -5px 5px #ffda44, -6px 6px #ffda44, -7px 7px #ffda44, -8px 8px #ffda44, -9px 9px #ffda44, -10px 10px #ffda44, -11px 11px #ffda44, -12px 12px #ffda44, -13px 13px #ffda44, -14px 14px #ffda44, -15px 15px #ffda44, -16px 16px #ffda44, -17px 17px #ffda44, -18px 18px #ffda44, -19px 19px #ffda44, -20px 20px #ffda44, -21px 21px #ffda44, -22px 22px #ffda44, -23px 23px #ffda44, -24px 24px #ffda44, -25px 25px #ffda44, -26px 26px #ffda44, -27px 27px #ffda44, -28px 28px #ffda44, -29px 29px #ffda44, -30px 30px #ffda44, -31px 31px #ffda44, -32px 32px #ffda44, -33px 33px #ffda44, -34px 34px #ffda44, -35px 35px #ffda44, -36px 36px #ffda44, -37px 37px #ffda44, -38px 38px #ffda44, -39px 39px #ffda44, -40px 40px #ffda44, -41px 41px #ffda44, -42px 42px #ffda44, -43px 43px #ffda44, -44px 44px #ffda44, -45px 45px #ffda44, -46px 46px #ffda44, -47px 47px #ffda44, -48px 48px #ffda44, -49px 49px #ffda44, -50px 50px #ffda44, -51px 51px #ffda44, -52px 52px #ffda44, -53px 53px #ffda44, -54px 54px #ffda44, -55px 55px #ffda44, -56px 56px #ffda44, -57px 57px #ffda44, -58px 58px #ffda44, -59px 59px #ffda44, -60px 60px #ffda44, -61px 61px #ffda44, -62px 62px #ffda44, -63px 63px #ffda44, -64px 64px #ffda44, -65px 65px #ffda44, -66px 66px #ffda44, -67px 67px #ffda44, -68px 68px #ffda44, -69px 69px #ffda44, -70px 70px #ffda44, -71px 71px #ffda44, -72px 72px #ffda44, -73px 73px #ffda44, -74px 74px #ffda44, -75px 75px #ffda44, -76px 76px #ffda44, -77px 77px #ffda44, -78px 78px #ffda44, -79px 79px #ffda44, -80px 80px #ffda44, -81px 81px #ffda44, -82px 82px #ffda44, -83px 83px #ffda44, -84px 84px #ffda44, -85px 85px #ffda44; }
+  .btn-longshadow-left.btn-color-2:active, .btn-longshadow-left.btn-color-2.active, .btn-longshadow-left.btn-color-2.is-active {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+  .btn-longshadow-left.btn-color-3 {
+    text-shadow: 0px 0px #896e00, -1px 1px #896e00, -2px 2px #896e00, -3px 3px #896e00, -4px 4px #896e00, -5px 5px #896e00, -6px 6px #896e00, -7px 7px #896e00, -8px 8px #896e00, -9px 9px #896e00, -10px 10px #896e00, -11px 11px #896e00, -12px 12px #896e00, -13px 13px #896e00, -14px 14px #896e00, -15px 15px #896e00, -16px 16px #896e00, -17px 17px #896e00, -18px 18px #896e00, -19px 19px #896e00, -20px 20px #896e00, -21px 21px #896e00, -22px 22px #896e00, -23px 23px #896e00, -24px 24px #896e00, -25px 25px #896e00, -26px 26px #896e00, -27px 27px #896e00, -28px 28px #896e00, -29px 29px #896e00, -30px 30px #896e00, -31px 31px #896e00, -32px 32px #896e00, -33px 33px #896e00, -34px 34px #896e00, -35px 35px #896e00, -36px 36px #896e00, -37px 37px #896e00, -38px 38px #896e00, -39px 39px #896e00, -40px 40px #896e00, -41px 41px #896e00, -42px 42px #896e00, -43px 43px #896e00, -44px 44px #896e00, -45px 45px #896e00, -46px 46px #896e00, -47px 47px #896e00, -48px 48px #896e00, -49px 49px #896e00, -50px 50px #896e00, -51px 51px #896e00, -52px 52px #896e00, -53px 53px #896e00, -54px 54px #896e00, -55px 55px #896e00, -56px 56px #896e00, -57px 57px #896e00, -58px 58px #896e00, -59px 59px #896e00, -60px 60px #896e00, -61px 61px #896e00, -62px 62px #896e00, -63px 63px #896e00, -64px 64px #896e00, -65px 65px #896e00, -66px 66px #896e00, -67px 67px #896e00, -68px 68px #896e00, -69px 69px #896e00, -70px 70px #896e00, -71px 71px #896e00, -72px 72px #896e00, -73px 73px #896e00, -74px 74px #896e00, -75px 75px #896e00, -76px 76px #896e00, -77px 77px #896e00, -78px 78px #896e00, -79px 79px #896e00, -80px 80px #896e00, -81px 81px #896e00, -82px 82px #896e00, -83px 83px #896e00, -84px 84px #896e00, -85px 85px #896e00; }
+  .btn-longshadow-left.btn-color-3:active, .btn-longshadow-left.btn-color-3.active, .btn-longshadow-left.btn-color-3.is-active {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+  .btn-longshadow-left.btn-color-4 {
+    text-shadow: 0px 0px #3f3613, -1px 1px #3f3613, -2px 2px #3f3613, -3px 3px #3f3613, -4px 4px #3f3613, -5px 5px #3f3613, -6px 6px #3f3613, -7px 7px #3f3613, -8px 8px #3f3613, -9px 9px #3f3613, -10px 10px #3f3613, -11px 11px #3f3613, -12px 12px #3f3613, -13px 13px #3f3613, -14px 14px #3f3613, -15px 15px #3f3613, -16px 16px #3f3613, -17px 17px #3f3613, -18px 18px #3f3613, -19px 19px #3f3613, -20px 20px #3f3613, -21px 21px #3f3613, -22px 22px #3f3613, -23px 23px #3f3613, -24px 24px #3f3613, -25px 25px #3f3613, -26px 26px #3f3613, -27px 27px #3f3613, -28px 28px #3f3613, -29px 29px #3f3613, -30px 30px #3f3613, -31px 31px #3f3613, -32px 32px #3f3613, -33px 33px #3f3613, -34px 34px #3f3613, -35px 35px #3f3613, -36px 36px #3f3613, -37px 37px #3f3613, -38px 38px #3f3613, -39px 39px #3f3613, -40px 40px #3f3613, -41px 41px #3f3613, -42px 42px #3f3613, -43px 43px #3f3613, -44px 44px #3f3613, -45px 45px #3f3613, -46px 46px #3f3613, -47px 47px #3f3613, -48px 48px #3f3613, -49px 49px #3f3613, -50px 50px #3f3613, -51px 51px #3f3613, -52px 52px #3f3613, -53px 53px #3f3613, -54px 54px #3f3613, -55px 55px #3f3613, -56px 56px #3f3613, -57px 57px #3f3613, -58px 58px #3f3613, -59px 59px #3f3613, -60px 60px #3f3613, -61px 61px #3f3613, -62px 62px #3f3613, -63px 63px #3f3613, -64px 64px #3f3613, -65px 65px #3f3613, -66px 66px #3f3613, -67px 67px #3f3613, -68px 68px #3f3613, -69px 69px #3f3613, -70px 70px #3f3613, -71px 71px #3f3613, -72px 72px #3f3613, -73px 73px #3f3613, -74px 74px #3f3613, -75px 75px #3f3613, -76px 76px #3f3613, -77px 77px #3f3613, -78px 78px #3f3613, -79px 79px #3f3613, -80px 80px #3f3613, -81px 81px #3f3613, -82px 82px #3f3613, -83px 83px #3f3613, -84px 84px #3f3613, -85px 85px #3f3613; }
+  .btn-longshadow-left.btn-color-4:active, .btn-longshadow-left.btn-color-4.active, .btn-longshadow-left.btn-color-4.is-active {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+  .btn-longshadow-left.btn-color-5 {
+    text-shadow: 0px 0px #f0e19f, -1px 1px #f0e19f, -2px 2px #f0e19f, -3px 3px #f0e19f, -4px 4px #f0e19f, -5px 5px #f0e19f, -6px 6px #f0e19f, -7px 7px #f0e19f, -8px 8px #f0e19f, -9px 9px #f0e19f, -10px 10px #f0e19f, -11px 11px #f0e19f, -12px 12px #f0e19f, -13px 13px #f0e19f, -14px 14px #f0e19f, -15px 15px #f0e19f, -16px 16px #f0e19f, -17px 17px #f0e19f, -18px 18px #f0e19f, -19px 19px #f0e19f, -20px 20px #f0e19f, -21px 21px #f0e19f, -22px 22px #f0e19f, -23px 23px #f0e19f, -24px 24px #f0e19f, -25px 25px #f0e19f, -26px 26px #f0e19f, -27px 27px #f0e19f, -28px 28px #f0e19f, -29px 29px #f0e19f, -30px 30px #f0e19f, -31px 31px #f0e19f, -32px 32px #f0e19f, -33px 33px #f0e19f, -34px 34px #f0e19f, -35px 35px #f0e19f, -36px 36px #f0e19f, -37px 37px #f0e19f, -38px 38px #f0e19f, -39px 39px #f0e19f, -40px 40px #f0e19f, -41px 41px #f0e19f, -42px 42px #f0e19f, -43px 43px #f0e19f, -44px 44px #f0e19f, -45px 45px #f0e19f, -46px 46px #f0e19f, -47px 47px #f0e19f, -48px 48px #f0e19f, -49px 49px #f0e19f, -50px 50px #f0e19f, -51px 51px #f0e19f, -52px 52px #f0e19f, -53px 53px #f0e19f, -54px 54px #f0e19f, -55px 55px #f0e19f, -56px 56px #f0e19f, -57px 57px #f0e19f, -58px 58px #f0e19f, -59px 59px #f0e19f, -60px 60px #f0e19f, -61px 61px #f0e19f, -62px 62px #f0e19f, -63px 63px #f0e19f, -64px 64px #f0e19f, -65px 65px #f0e19f, -66px 66px #f0e19f, -67px 67px #f0e19f, -68px 68px #f0e19f, -69px 69px #f0e19f, -70px 70px #f0e19f, -71px 71px #f0e19f, -72px 72px #f0e19f, -73px 73px #f0e19f, -74px 74px #f0e19f, -75px 75px #f0e19f, -76px 76px #f0e19f, -77px 77px #f0e19f, -78px 78px #f0e19f, -79px 79px #f0e19f, -80px 80px #f0e19f, -81px 81px #f0e19f, -82px 82px #f0e19f, -83px 83px #f0e19f, -84px 84px #f0e19f, -85px 85px #f0e19f; }
+  .btn-longshadow-left.btn-color-5:active, .btn-longshadow-left.btn-color-5.active, .btn-longshadow-left.btn-color-5.is-active {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+/*
+ * Button Sizes
+ *
+ * This file creates the various button sizes
+ * (ex. .button-large, .button-small, etc.)
+ */
+.btn-giant {
+  font-size: 1.75em;
+  height: 70px;
+  line-height: 70px;
+  padding: 0 70px; }
+
+.btn-jumbo {
+  font-size: 1.5em;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 60px; }
+
+.btn-large {
+  font-size: 1.25em;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 50px; }
+
+.btn-normal {
+  font-size: 1em;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 40px; }
+
+.btn-small {
+  font-size: 0.75em;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 30px; }
+
+.btn-tiny {
+  font-size: 0.6em;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 24px; }
